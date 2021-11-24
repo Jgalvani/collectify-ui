@@ -1,6 +1,10 @@
 {
   "name": "collectify-ui",
   "version": "0.0.0",
+  "engines": {
+    "node": "14.x",
+    "npm": "8.1.x"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
