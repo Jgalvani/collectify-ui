@@ -8,7 +8,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "ng build",
+    "build": "ng build --prod",
     "heroku-postbuild": "node --max_old_space_size=512 && ng build --aot --configuration production",
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
