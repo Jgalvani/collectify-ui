@@ -1,0 +1,92 @@
+
+<div id="container">
+
+  <span id=title>Collectify</span>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div id="columns">
+
+      <div class="column">
+
+        <div class="input">
+          <div class="control">
+            <label class="form-label" for="lastname">Nom</label>
+            <input class="form-input" id="lastname" formControlName="lastname" type="text">
+          </div>
+
+          <div class="error">
+            <div *ngIf="form.controls.lastname.touched && form.controls.lastname.invalid" class="alert">
+              <div *ngIf="form.controls.lastname.errors?.required">Veuillez entrer votre nom.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="input">
+          <div class="control">
+            <label class="form-label" for="firstname">Prénom</label>
+            <input class="form-input" id="firstname" formControlName="firstname" type="text">
+          </div>
+
+          <div class="error">
+            <div *ngIf="form.controls.firstname.touched && form.controls.firstname.invalid" class="alert">
+              <div *ngIf="form.controls.firstname.errors?.required">Veuillez entrer votre prénom.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="input">
+          <div class="control">
+            <label class="form-label" for="date_of_birth">Date de naissance</label>
+            <input class="form-input" id="date_of_birth" formControlName="date_of_birth" type="date">
+          </div>
+
+          <div class="error">
+            <div *ngIf="form.controls.date_of_birth.touched && form.controls.date_of_birth.invalid" class="alert">
+              <div *ngIf="form.controls.date_of_birth.errors?.required">Veuillez renseigner votre date de naissance.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="column" >
+
+        <div class="input">
+          <div class="control">
+            <input class="form-checkbox" id="has_driver_licence" formControlName="has_driver_licence" type="checkbox">
+            <label class="form-question" for="has_driver_licence">Avez vous le permis ?</label>
+          </div>
+        </div>
+
+        <div class="input" *ngIf="form.value.has_driver_licence">
+          <div class="control">
+            <select class="form-select" formControlName="car_id" (change)="setColors()">
+              <option value="" selected disabled hidden>Modèle</option>
+              <option *ngFor="let car of cars" [value]="car.id">{{ car.name }}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="input" *ngIf="form.value.has_driver_licence">
+          <div class="control">
+            <select class="form-select"  formControlName="color_id">
+              <option value="" disabled selected hidden>Couleur</option>
+              <option *ngFor="let color of colors" [value]="color.id">{{ color.name }}</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="submit">
+      <div *ngIf="isLoading" class="spinner-border" role="status">
+        <span class="visually-hidden"></span>
+      </div>
+      <button type="submit">Valider</button>
+      <p *ngIf="displayMessage" id="message">Vos informations ont bien été sauvegardées !</p>
+    </div>
+  </form>
+</div>

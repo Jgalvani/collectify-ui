@@ -1,0 +1,79 @@
+#container {
+  width: 45%;
+  min-width: 550px;
+  border: solid 1px black;
+  padding: 40px 10px;
+  margin: auto;
+  margin-top: 10%;
+
+  #title {
+    background-color: white;
+    padding: 3px;
+    position: relative;
+    bottom: 49px;
+  }
+
+  form {
+
+    #columns{
+      display: flex;
+      justify-content: flex-end;
+      width: 90%;
+
+      .column {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .input {
+          margin-bottom: 20px;
+
+          .control {
+            display: flex;
+
+            .form-label {
+              margin: auto;
+              margin-right: 10px;
+              white-space: nowrap;
+            }
+
+            .form-input {
+              width: 155px;
+            }
+
+            .form-select {
+              padding: 2px 5px;
+              width: 155px;
+            }
+
+            .form-checkbox {
+              margin: auto;
+              margin-right: 5px;
+            }
+          }
+
+          .error {
+            text-align: end;
+          }
+
+        }
+      }
+    }
+
+    #submit {
+     // position: relative;
+      text-align: end;
+      width: 90%;
+
+      #message {
+       // position: absolute;
+      }
+
+      button {
+        background-color: lightgrey;
+        padding: 2px 5px;
+      }
+    }
+  }
+}
