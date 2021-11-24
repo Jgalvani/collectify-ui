@@ -39,9 +39,9 @@ export class HomeComponent {
     this.carSubscription = this.carService.getCars()
       .subscribe(
         (cars: Car[]) => {
-            this.cars = cars,
-            this.isLoading = false,
-      );
+            this.cars = cars;
+            this.isLoading = false;
+        });
   }
 
   public setColors(): void {
