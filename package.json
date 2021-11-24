@@ -7,9 +7,11 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
+    "heroku-postbuild": "node --max_old_space_size=512 && ng build --aot --configuration production",
     "watch": "ng build --watch --configuration development",
+    "lint": "ng lint",
     "test": "ng test"
   },
   "private": true,
