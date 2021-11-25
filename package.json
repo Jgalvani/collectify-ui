@@ -7,8 +7,9 @@
   },
   "scripts": {
     "ng": "ng",
+    "config": "ts-node ./scripts/setenv.ts",
     "start": "node server.js",
-    "build": "ng build --prod",
+    "build": "npm run config -- --environment=prod && ng build --prod",
     "heroku-postbuild": "node --max_old_space_size=512 && ng build --aot --configuration production",
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
@@ -25,8 +26,10 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "express": "^4.17.1",
+    "fs": "^0.0.1-security",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
+    "yargs": "^17.2.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
