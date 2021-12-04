@@ -10,7 +10,7 @@
     "config": "npx ts-node ./scripts/setenv.ts",
     "start": "node server.js",
     "build": "npm run config -- --environment=prod && ng build --prod",
-    "heroku-postbuild": "node --max_old_space_size=512 && ng build --aot --configuration production",
+    "heroku-postbuild": "npm run config -- --environment=prod && node --max_old_space_size=512 && ng build --aot --configuration production",
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
     "test": "ng test"
