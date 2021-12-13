@@ -62,16 +62,16 @@ export class HomeComponent {
       lastname: new FormControl('', [Validators.required, Validators.maxLength(255)]),
       date_of_birth: new FormControl('', Validators.required),
       has_driver_licence: new FormControl(false),
-      car_id: new FormControl(''),
-      color_id: new FormControl(''),
+      car_id: new FormControl(null),
+      color_id: new FormControl(null),
     });
   }
 
   private userSerializer(): User {
 
-    const user: User = {
+    const user = {
       ...this.form.value,
-    }
+    } as User;
 
     return user;
   }

@@ -62,12 +62,13 @@
     }
 
     #submit {
-     // position: relative;
+      position: relative;
       text-align: end;
       width: 90%;
 
-      #message {
-       // position: absolute;
+      .right {
+       position: absolute;
+       right: 15%;
       }
 
       button {
