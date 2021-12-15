@@ -35,7 +35,7 @@ export class HomeComponent {
     private userService: UserService,
   ) {
     this.isLoading = true;
-    this.form = this.createForm();
+    this.form = this.getForm();
     this.carSubscription = this.carService.getCars()
       .subscribe(
         (cars: Car[]) => {
@@ -55,7 +55,7 @@ export class HomeComponent {
     this.isLoading = false;
   }
 
-  private createForm(): FormGroup {
+  private getForm(): FormGroup {
 
     return this.formBuilder.group({
       firstname: new FormControl('', [Validators.required, Validators.maxLength(255)]),
@@ -90,7 +90,7 @@ export class HomeComponent {
       });
   }
 
-  private notify() {
+  private notify(): void {
     this.displayMessage = true;
     setTimeout(()=> this.displayMessage = false, 5000);
   }
