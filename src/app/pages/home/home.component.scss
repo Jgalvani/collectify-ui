@@ -14,8 +14,7 @@
   }
 
   form {
-
-    #columns{
+    #columns {
       display: flex;
       justify-content: flex-end;
       width: 90%;
@@ -56,7 +55,6 @@
           .error {
             text-align: end;
           }
-
         }
       }
     }
@@ -67,8 +65,8 @@
       width: 90%;
 
       .right {
-       position: absolute;
-       right: 15%;
+        position: absolute;
+        right: 15%;
       }
 
       button {
