@@ -30,6 +30,12 @@ Run `npm run lint`to execute linting for every file in "src" folder.
 
 Run `npm run format`to execute prettier for every file in "src" folder.
 
+## Install pre-commit hooks
+
+Run `npx mrm@2 lint-staged` to install "husky" and "lint-staged". 
+Configure "prettier", "eslint" and any command you like in "lint-staged" json in "package.json".
+Finally run `npm run prepare` to initialize pre-commit from husky.
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
