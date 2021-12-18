@@ -107,7 +107,10 @@
               (change)="setColors()"
             >
               <option [value]="null" selected disabled hidden>Modèle</option>
-              <option *ngFor="let car of cars" [value]="car.id">
+              <option
+                *ngFor="let car of cars; trackBy: trackByCar"
+                [value]="car.id"
+              >
                 {{ car.name }}
               </option>
             </select>
@@ -118,7 +121,10 @@
           <div class="control">
             <select class="form-select" formControlName="color_id">
               <option [value]="null" disabled selected hidden>Couleur</option>
-              <option *ngFor="let color of colors" [value]="color.id">
+              <option
+                *ngFor="let color of colors; trackBy: trackByColor"
+                [value]="color.id"
+              >
                 {{ color.name }}
               </option>
             </select>

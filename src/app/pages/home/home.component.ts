@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, TrackByFunction } from "@angular/core";
 import {
   FormBuilder,
   FormControl,
@@ -31,6 +31,10 @@ export class HomeComponent {
   public colors: Color[] = [];
   public user: User | undefined;
 
+  // Functions
+  public trackByCar: TrackByFunction<Car>;
+  public trackByColor: TrackByFunction<Color>;
+
   carSubscription: SubscriptionLike | undefined;
 
   constructor(
@@ -39,6 +43,8 @@ export class HomeComponent {
     private userService: UserService
   ) {
     this.isLoading = true;
+    this.trackByCar = this.carService.trackByCar;
+    this.trackByColor = this.carService.trackByColor;
     this.form = this.getForm();
     this.carSubscription = this.carService
       .getCars()

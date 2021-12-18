@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 
 import { Car } from "src/app/models/car";
 import { environment } from "src/environments/environment";
+import { Color } from "src/app/models/color";
 
 @Injectable({
   providedIn: "root",
@@ -19,6 +20,15 @@ export class CarService {
   };
 
   constructor(private http: HttpClient) {}
+
+  // TrackBy
+  public trackByCar(index: number, car: Car): number {
+    return index;
+  }
+
+  public trackByColor(index: number, color: Color): number {
+    return index;
+  }
 
   // GET
   public getCars(): Observable<Car[]> {
