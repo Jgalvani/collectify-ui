@@ -23,11 +23,11 @@ export class CarService {
 
   // TrackBy
   public trackByCar(index: number, car: Car): number {
-    return index;
+    return car.id;
   }
 
   public trackByColor(index: number, color: Color): number {
-    return index;
+    return color.id;
   }
 
   // GET
